@@ -40,6 +40,23 @@ export class Utils {
         };
     };
 
+    /**
+    * Checks if an item contains any item from another array
+    * @returns {boolean}
+    */
+    static containsAny(arr1: string[], arr2: string[]): boolean {
+	const lowercasedArr1 = arr1.map((word) => word.toLowerCase()); // Convert each word in the message to lowercase for case-insensitive comparison
+
+	for (const item of arr2) {
+		if (lowercasedArr1.includes(item.toLowerCase())) {
+			return true;
+		}
+	}
+
+	return false;
+}
+
+
     /**     
      * @returns {boolean}
      */
